@@ -1,5 +1,5 @@
-import Link from 'next/link';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function Home() {
   return (
@@ -7,14 +7,10 @@ export default function Home() {
       <header className="sticky top-0 z-50 border-b bg-card/95 backdrop-blur supports-[backdrop-filter]:bg-card/80">
         <div className="container-custom flex items-center justify-between py-4">
           <Link href="/" className="flex items-center gap-3">
-            <div className="p-2 rounded-lg bg-primary">
-              <svg className="h-6 w-6 text-primary-foreground" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
-              </svg>
-            </div>
+            <Image src="/sunair-logo.png" alt="Sun Air" width={180} height={56} priority className="h-12 w-auto object-contain" />
             <div>
-              <span className="block text-xl font-bold leading-none">WarrantyPro</span>
-              <span className="text-xs text-muted-foreground">HVAC Protection</span>
+              <span className="block text-xl font-bold leading-none">Sun Air</span>
+              <span className="text-xs text-muted-foreground">Heating &amp; A/C Supply</span>
             </div>
           </Link>
           <nav className="flex items-center gap-3">
@@ -215,8 +211,8 @@ export default function Home() {
         <div className="container-custom grid gap-8 md:grid-cols-4">
           <div>
             <Link href="/" className="mb-4 flex items-center gap-3">
-              <div className="rounded-lg bg-primary p-2"><svg className="h-5 w-5 text-primary-foreground" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
-              <span className="text-lg font-bold">WarrantyPro</span>
+              <Image src="/sunair-logo.png" alt="Sun Air" width={150} height={48} className="h-10 w-auto object-contain" />
+              <span className="text-lg font-bold">Sun Air</span>
             </Link>
             <p className="text-sm text-muted-foreground">Professional HVAC warranty registration and management system.</p>
           </div>
