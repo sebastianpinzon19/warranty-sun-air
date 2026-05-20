@@ -123,3 +123,25 @@
   }
 }
 
+@layer components {
+  .label {
+    @apply mb-2 block text-sm font-semibold text-foreground;
+  }
+
+  .input-field {
+    @apply w-full rounded-lg border-2 border-border bg-background px-4 py-3 text-sm text-foreground shadow-sm transition-colors placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20;
+  }
+
+  select.input-field {
+    @apply pr-10;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded-lg bg-primary px-6 py-3 font-semibold text-primary-foreground shadow-sm transition hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-primary/30;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center rounded-lg border-2 border-border bg-background px-6 py-3 font-semibold text-foreground shadow-sm transition hover:bg-muted focus:outline-none focus:ring-2 focus:ring-primary/20;
+  }
+}
+

@@ -64,11 +64,11 @@ export default function ProductInfo() {
             <input
               type="text"
               {...register(`products.${index}.serialNumber`)}
-              className={`input-field ${(errors.products as any)?.[index]?.serialNumber ? 'border-red-500' : ''}`}
+              className={`input-field ${(errors.products as any)?.[index]?.serialNumber ? 'border-sun-yellow ring-2 ring-sun-yellow/20' : ''}`}
               placeholder="Enter serial number (e.g., SUN-2024-001234)"
             />
             {(errors.products as any)?.[index]?.serialNumber && (
-              <p className="mt-1 text-sm text-red-600">
+              <p className="mt-1 text-sm text-sun-blue">
                 {String((errors.products as any)?.[index]?.serialNumber?.message)}
               </p>
             )}
@@ -76,7 +76,7 @@ export default function ProductInfo() {
         ))}
 
         {errors.products && typeof errors.products.message === 'string' && (
-          <p className="text-sm text-red-600">{errors.products.message}</p>
+          <p className="text-sm text-sun-blue">{errors.products.message}</p>
         )}
       </div>
 
@@ -101,7 +101,7 @@ export default function ProductInfo() {
           </span>
         </label>
         {errors.acceptTerms && (
-          <p className="mt-2 text-sm text-red-600 font-semibold">{String(errors.acceptTerms?.message)}</p>
+          <p className="mt-2 text-sm text-sun-blue font-semibold">{String(errors.acceptTerms?.message)}</p>
         )}
       </div>
 

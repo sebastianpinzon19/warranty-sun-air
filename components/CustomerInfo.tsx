@@ -50,11 +50,11 @@ export default function CustomerInfo() {
           id="ownerName"
           type="text"
           {...register('ownerName')}
-          className={`input-field ${errors.ownerName ? 'border-red-500' : ''}`}
+          className={`input-field ${errors.ownerName ? 'border-sun-yellow ring-2 ring-sun-yellow/20' : ''}`}
           placeholder="John Doe"
         />
         {errors.ownerName && (
-          <p className="mt-1 text-sm text-red-600">{String(errors.ownerName?.message)}</p>
+          <p className="mt-1 text-sm text-sun-blue">{String(errors.ownerName?.message)}</p>
         )}
       </div>
 
@@ -67,11 +67,11 @@ export default function CustomerInfo() {
           id="email"
           type="email"
           {...register('email')}
-          className={`input-field ${errors.email ? 'border-red-500' : ''}`}
+          className={`input-field ${errors.email ? 'border-sun-yellow ring-2 ring-sun-yellow/20' : ''}`}
           placeholder="john@example.com"
         />
         {errors.email && (
-          <p className="mt-1 text-sm text-red-600">{String(errors.email?.message)}</p>
+          <p className="mt-1 text-sm text-sun-blue">{String(errors.email?.message)}</p>
         )}
       </div>
 
@@ -84,11 +84,11 @@ export default function CustomerInfo() {
           id="phone"
           type="tel"
           {...register('phone')}
-          className={`input-field ${errors.phone ? 'border-red-500' : ''}`}
+          className={`input-field ${errors.phone ? 'border-sun-yellow ring-2 ring-sun-yellow/20' : ''}`}
           placeholder="(555) 123-4567"
         />
         {errors.phone && (
-          <p className="mt-1 text-sm text-red-600">{String(errors.phone?.message)}</p>
+          <p className="mt-1 text-sm text-sun-blue">{String(errors.phone?.message)}</p>
         )}
       </div>
 
@@ -101,10 +101,10 @@ export default function CustomerInfo() {
           id="installationDate"
           type="date"
           {...register('installationDate')}
-          className={`input-field ${errors.installationDate ? 'border-red-500' : ''}`}
+          className={`input-field ${errors.installationDate ? 'border-sun-yellow ring-2 ring-sun-yellow/20' : ''}`}
         />
         {errors.installationDate && (
-          <p className="mt-1 text-sm text-red-600">{String(errors.installationDate?.message)}</p>
+          <p className="mt-1 text-sm text-sun-blue">{String(errors.installationDate?.message)}</p>
         )}
       </div>
 
@@ -117,11 +117,11 @@ export default function CustomerInfo() {
           id="addressLine1"
           type="text"
           {...register('addressLine1')}
-          className={`input-field ${errors.addressLine1 ? 'border-red-500' : ''}`}
+          className={`input-field ${errors.addressLine1 ? 'border-sun-yellow ring-2 ring-sun-yellow/20' : ''}`}
           placeholder="123 Main Street"
         />
         {errors.addressLine1 && (
-          <p className="mt-1 text-sm text-red-600">{String(errors.addressLine1?.message)}</p>
+          <p className="mt-1 text-sm text-sun-blue">{String(errors.addressLine1?.message)}</p>
         )}
       </div>
 
@@ -149,11 +149,11 @@ export default function CustomerInfo() {
             id="city"
             type="text"
             {...register('city')}
-            className={`input-field ${errors.city ? 'border-red-500' : ''}`}
+            className={`input-field ${errors.city ? 'border-sun-yellow ring-2 ring-sun-yellow/20' : ''}`}
             placeholder="Miami"
           />
           {errors.city && (
-            <p className="mt-1 text-sm text-red-600">{String(errors.city?.message)}</p>
+            <p className="mt-1 text-sm text-sun-blue">{String(errors.city?.message)}</p>
           )}
         </div>
 
@@ -164,7 +164,7 @@ export default function CustomerInfo() {
           <select
             id="state"
             {...register('state')}
-            className={`input-field ${errors.state ? 'border-red-500' : ''}`}
+            className={`input-field ${errors.state ? 'border-sun-yellow ring-2 ring-sun-yellow/20' : ''}`}
           >
             <option value="">Select state</option>
             {US_STATES.map((state) => (
@@ -174,7 +174,7 @@ export default function CustomerInfo() {
             ))}
           </select>
           {errors.state && (
-            <p className="mt-1 text-sm text-red-600">{String(errors.state?.message)}</p>
+            <p className="mt-1 text-sm text-sun-blue">{String(errors.state?.message)}</p>
           )}
         </div>
 
@@ -186,11 +186,11 @@ export default function CustomerInfo() {
             id="zipCode"
             type="text"
             {...register('zipCode')}
-            className={`input-field ${errors.zipCode ? 'border-red-500' : ''}`}
+            className={`input-field ${errors.zipCode ? 'border-sun-yellow ring-2 ring-sun-yellow/20' : ''}`}
             placeholder="33101"
           />
           {errors.zipCode && (
-            <p className="mt-1 text-sm text-red-600">{String(errors.zipCode?.message)}</p>
+            <p className="mt-1 text-sm text-sun-blue">{String(errors.zipCode?.message)}</p>
           )}
         </div>
       </div>

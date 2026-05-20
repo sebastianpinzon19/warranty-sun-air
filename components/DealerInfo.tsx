@@ -21,11 +21,11 @@ export default function DealerInfo() {
           id="dealerName"
           type="text"
           {...register('dealerName')}
-          className={`input-field ${errors.dealerName ? 'border-red-500' : ''}`}
+          className={`input-field ${errors.dealerName ? 'border-sun-yellow ring-2 ring-sun-yellow/20' : ''}`}
           placeholder="ABC HVAC Solutions"
         />
         {errors.dealerName && (
-          <p className="mt-1 text-sm text-red-600">{String(errors.dealerName?.message)}</p>
+          <p className="mt-1 text-sm text-sun-blue">{String(errors.dealerName?.message)}</p>
         )}
       </div>
 
@@ -38,11 +38,11 @@ export default function DealerInfo() {
           id="dealerEmail"
           type="email"
           {...register('dealerEmail')}
-          className={`input-field ${errors.dealerEmail ? 'border-red-500' : ''}`}
+          className={`input-field ${errors.dealerEmail ? 'border-sun-yellow ring-2 ring-sun-yellow/20' : ''}`}
           placeholder="contact@abchvac.com"
         />
         {errors.dealerEmail && (
-          <p className="mt-1 text-sm text-red-600">{String(errors.dealerEmail?.message)}</p>
+          <p className="mt-1 text-sm text-sun-blue">{String(errors.dealerEmail?.message)}</p>
         )}
       </div>
 
@@ -55,11 +55,11 @@ export default function DealerInfo() {
           id="dealerPhone"
           type="tel"
           {...register('dealerPhone')}
-          className={`input-field ${errors.dealerPhone ? 'border-red-500' : ''}`}
+          className={`input-field ${errors.dealerPhone ? 'border-sun-yellow ring-2 ring-sun-yellow/20' : ''}`}
           placeholder="(555) 987-6543"
         />
         {errors.dealerPhone && (
-          <p className="mt-1 text-sm text-red-600">{String(errors.dealerPhone?.message)}</p>
+          <p className="mt-1 text-sm text-sun-blue">{String(errors.dealerPhone?.message)}</p>
         )}
       </div>
 
