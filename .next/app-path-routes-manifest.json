@@ -1,0 +1,12 @@
+{
+  "/_global-error/page": "/_global-error",
+  "/_not-found/page": "/_not-found",
+  "/api/warranty/download/[id]/route": "/api/warranty/download/[id]",
+  "/api/warranty/lookup/route": "/api/warranty/lookup",
+  "/api/warranty/register/route": "/api/warranty/register",
+  "/favicon.ico/route": "/favicon.ico",
+  "/lookup/page": "/lookup",
+  "/page": "/",
+  "/register/page": "/register",
+  "/success/page": "/success"
+}

@@ -1,0 +1,3 @@
+module.exports=[65050,a=>{"use strict";var b=a.i(22309);a.s(["default",0,function({children:a}){return(0,b.jsx)("html",{lang:"en",className:"h-full antialiased",children:(0,b.jsx)("body",{className:"min-h-full flex flex-col",children:a})})},"metadata",0,{title:"Sun Air Warranty",description:"Register and download Sun Air warranty certificates",icons:{icon:"/sunair-logo.png",shortcut:"/sunair-logo.png",apple:"/sunair-logo.png"}}])},35552,a=>{a.n(a.i(65050))}];
+
+//# sourceMappingURL=warranty-system_app_layout_tsx_07yx0.r._.js.map
