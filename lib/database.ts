@@ -54,6 +54,11 @@ function getPool(): PgPool | null {
   return cachedPool ?? null;
 }
 
+// Exported accessor for other modules that need the same pool
+export function getDbPool(): PgPool | null {
+  return getPool();
+}
+
 async function ensureTable() {
   const pool = getPool();
   if (!pool) return;
