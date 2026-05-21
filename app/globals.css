@@ -124,6 +124,10 @@
 }
 
 @layer components {
+  .container-custom {
+    @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+
   .label {
     @apply mb-2 block text-sm font-semibold text-foreground;
   }
@@ -142,6 +146,19 @@
 
   .btn-secondary {
     @apply inline-flex items-center justify-center rounded-lg border-2 border-border bg-background px-6 py-3 font-semibold text-foreground shadow-sm transition hover:bg-muted focus:outline-none focus:ring-2 focus:ring-primary/20;
+  }
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    min-height: 100vh;
+    background:
+      radial-gradient(circle at top left, color-mix(in oklab, var(--primary) 10%, transparent) 0, transparent 32%),
+      linear-gradient(180deg, color-mix(in oklab, var(--background) 96%, var(--primary) 4%) 0%, var(--background) 100%);
   }
 }
 
