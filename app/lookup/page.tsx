@@ -48,7 +48,7 @@ export default function LookupPage() {
     <div className="min-h-screen bg-background text-foreground">
       <header className="border-b bg-card/95 backdrop-blur">
         <div className="container-custom flex items-center justify-between py-4">
-          <Link href="/" className="text-xl font-bold">Sun Air</Link>
+          <Link href="/" className="text-xl font-bold">SunAir supply INC</Link>
           <Link href="/register" className="btn-secondary text-sm">Register Warranty</Link>
         </div>
       </header>

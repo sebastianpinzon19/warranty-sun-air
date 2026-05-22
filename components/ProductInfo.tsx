@@ -24,7 +24,7 @@ export default function ProductInfo() {
     <div className="space-y-6">
       <div className="border-b border-gray-200 pb-4 mb-6">
         <h3 className="text-2xl font-bold text-sun-blue">Step 3: Product Information</h3>
-        <p className="text-gray-600 text-sm mt-1">Enter the serial numbers for your SUN AIR equipment</p>
+        <p className="text-gray-600 text-sm mt-1">Enter the serial numbers for your SunAir supply INC equipment</p>
       </div>
 
       {/* Products List */}

@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'Sun Air Warranty System',
-  description: 'Warranty registration and lookup portal for Sun Air',
+  title: 'SunAir supply INC Warranty System',
+  description: 'Warranty registration and lookup portal for SunAir supply INC',
   icons: {
     icon: [
       { url: '/favicon_io/favicon-32x32.png', sizes: '32x32', type: 'image/png' },

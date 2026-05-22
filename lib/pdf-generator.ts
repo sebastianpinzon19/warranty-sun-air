@@ -11,7 +11,7 @@ export function generateWarrantyCertificate(warranty: Warranty) {
   
   doc.setTextColor(255, 179, 0); // SUN YELLOW
   doc.setFontSize(28);
-  doc.text('SUN AIR', 105, 20, { align: 'center' });
+  doc.text('SunAir supply INC', 105, 20, { align: 'center' });
   
   doc.setTextColor(255, 255, 255);
   doc.setFontSize(16);
@@ -88,7 +88,7 @@ export function generateWarrantyCertificate(warranty: Warranty) {
     '4. Regular maintenance is required to maintain warranty validity.',
     '5. This warranty is non-transferable unless otherwise specified.',
     '6. Claims must be filed through authorized service centers.',
-    '7. SUN AIR reserves the right to inspect equipment before honoring claims.',
+    '7. SunAir supply INC reserves the right to inspect equipment before honoring claims.',
     '',
     `Registration Date: ${new Date(warranty.registeredAt).toLocaleDateString()}`,
     `Warranty Status: ${warranty.status.toUpperCase()}`,
@@ -103,7 +103,7 @@ export function generateWarrantyCertificate(warranty: Warranty) {
   // Footer
   doc.setTextColor(128, 128, 128);
   doc.setFontSize(8);
-  doc.text('© SUN AIR - All Rights Reserved', 105, 285, { align: 'center' });
+  doc.text('© SunAir supply INC - All Rights Reserved', 105, 285, { align: 'center' });
   doc.text('For warranty claims, contact our support team', 105, 290, { align: 'center' });
   
   return doc;

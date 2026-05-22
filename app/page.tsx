@@ -7,9 +7,9 @@ export default function Home() {
       <header className="sticky top-0 z-50 border-b bg-card/95 backdrop-blur supports-[backdrop-filter]:bg-card/80">
         <div className="container-custom flex items-center justify-between py-4">
           <Link href="/" className="flex items-center gap-3">
-            <Image src="/sunair-logo.png" alt="Sun Air" width={180} height={56} priority className="h-12 w-auto object-contain" />
+            <Image src="/sunair-logo.png" alt="SunAir supply INC" width={180} height={56} priority className="h-12 w-auto object-contain" />
             <div>
-              <span className="block text-xl font-bold leading-none">Sun Air</span>
+              <span className="block text-xl font-bold leading-none">SunAir supply INC</span>
               <span className="text-xs text-muted-foreground">Heating &amp; A/C Supply</span>
             </div>
           </Link>
@@ -211,8 +211,8 @@ export default function Home() {
         <div className="container-custom grid gap-8 md:grid-cols-4">
           <div>
             <Link href="/" className="mb-4 flex items-center gap-3">
-              <Image src="/sunair-logo.png" alt="Sun Air" width={150} height={48} className="h-10 w-auto object-contain" />
-              <span className="text-lg font-bold">Sun Air</span>
+              <Image src="/sunair-logo.png" alt="SunAir supply INC" width={150} height={48} className="h-10 w-auto object-contain" />
+              <span className="text-lg font-bold">SunAir supply INC</span>
             </Link>
             <p className="text-sm text-muted-foreground">Professional HVAC warranty registration and management system.</p>
           </div>
@@ -234,9 +234,10 @@ export default function Home() {
           <div>
             <h4 className="mb-4 font-semibold">Contact</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li>support@warrantypro.com</li>
-              <li>1-800-WARRANTY</li>
-              <li>Mon-Fri 9AM-5PM</li>
+              <li>4244 Old Dixie Rd</li>
+              <li>Atlanta, GA 30354</li>
+              <li>info@sunairsupply.com</li>
+              <li>(404) 363-1020</li>
             </ul>
           </div>
         </div>
