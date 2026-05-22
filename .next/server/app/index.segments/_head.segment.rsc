@@ -1,6 +1,0 @@
-1:"$Sreact.fragment"
-2:I[67435,["/_next/static/chunks/0j_0lnuti3p50.js","/_next/static/chunks/0wrel8u7a-bnz.js"],"ViewportBoundary"]
-3:I[67435,["/_next/static/chunks/0j_0lnuti3p50.js","/_next/static/chunks/0wrel8u7a-bnz.js"],"MetadataBoundary"]
-4:"$Sreact.suspense"
-5:I[52926,["/_next/static/chunks/0j_0lnuti3p50.js","/_next/static/chunks/0wrel8u7a-bnz.js"],"IconMark"]
-0:{"rsc":["$","$1","h",{"children":[null,["$","$L2",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]}],["$","div",null,{"hidden":true,"children":["$","$L3",null,{"children":["$","$4",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"Sun Air Warranty"}],["$","meta","1",{"name":"description","content":"Register and download Sun Air warranty certificates"}],["$","link","2",{"rel":"shortcut icon","href":"/sunair-logo.png"}],["$","link","3",{"rel":"icon","href":"/favicon.ico?favicon.0x3dzn~oxb6tn.ico","sizes":"256x256","type":"image/x-icon"}],["$","link","4",{"rel":"icon","href":"/sunair-logo.png"}],["$","link","5",{"rel":"apple-touch-icon","href":"/sunair-logo.png"}],["$","$L5","6",{}]]}]}]}],null]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"-63tlaW5W-w5bSShuOSQB"}

@@ -48,6 +48,11 @@ export default function AdminAuditsPage() {
   const [summary, setSummary] = useState<AuditSummary>(defaultSummary);
 
   const [limit, setLimit] = useState('100');
+  const [page, setPage] = useState(1);
+  const [pageSize, setPageSize] = useState('100');
+  const [totalPages, setTotalPages] = useState(1);
+  const [sortBy, setSortBy] = useState('created_at');
+  const [sortOrder, setSortOrder] = useState<'asc' | 'desc'>('desc');
   const [action, setAction] = useState('');
   const [outcome, setOutcome] = useState('');
   const [severity, setSeverity] = useState('');
@@ -80,6 +85,10 @@ export default function AdminAuditsPage() {
     try {
       const params = new URLSearchParams();
       if (limit) params.set('limit', limit);
+      if (page) params.set('page', String(page));
+      if (pageSize) params.set('pageSize', pageSize);
+      if (sortBy) params.set('sortBy', sortBy);
+      if (sortOrder) params.set('sortOrder', sortOrder);
       if (action) params.set('action', action);
       if (outcome) params.set('outcome', outcome);
       if (severity) params.set('severity', severity);
@@ -97,9 +106,14 @@ export default function AdminAuditsPage() {
         throw new Error(body.error || `Request failed (${res.status})`);
       }
 
-      const data = (await res.json()) as AuditResponse;
+      const data = (await res.json()) as AuditResponse & { pagination?: { total: number; page: number; pageSize: number; totalPages: number } };
       setAudits(data.audits || []);
       setSummary(data.summary || defaultSummary);
+      if (data.pagination) {
+        setTotalPages(data.pagination.totalPages || 1);
+        setPage(data.pagination.page || 1);
+        setPageSize(String(data.pagination.pageSize || Number(pageSize)));
+      }
     } catch (err) {
       setError(err instanceof Error ? err.message : 'No se pudo cargar auditorias');
     } finally {
@@ -117,6 +131,18 @@ export default function AdminAuditsPage() {
     if (severityValue === 'critical') return 'bg-red-600/15 text-red-700 border-red-600/30';
     if (severityValue === 'warning') return 'bg-amber-500/15 text-amber-700 border-amber-500/30';
     return 'bg-blue-500/15 text-blue-700 border-blue-500/30';
+  }
+
+  function toggleSort(column: string) {
+    if (sortBy === column) {
+      setSortOrder((o) => (o === 'asc' ? 'desc' : 'asc'));
+    } else {
+      setSortBy(column);
+      setSortOrder('desc');
+    }
+    setPage(1);
+    // Refresh with new sort
+    void fetchAudits();
   }
 
   return (
@@ -214,17 +240,17 @@ export default function AdminAuditsPage() {
 
       <section className="overflow-hidden rounded-xl border bg-card">
         <div className="border-b px-4 py-3 text-sm text-muted-foreground">
-          Eventos recientes: {audits.length}
+          Eventos recientes: {audits.length} — Página {page} / {totalPages}
         </div>
 
         <div className="overflow-x-auto">
           <table className="min-w-full text-sm">
             <thead className="bg-muted/40 text-left">
               <tr>
-                <th className="px-4 py-3 font-semibold">Fecha</th>
-                <th className="px-4 py-3 font-semibold">Accion</th>
-                <th className="px-4 py-3 font-semibold">Outcome</th>
-                <th className="px-4 py-3 font-semibold">Severidad</th>
+                <th className="px-4 py-3 font-semibold cursor-pointer" onClick={() => toggleSort('created_at')}>Fecha</th>
+                <th className="px-4 py-3 font-semibold cursor-pointer" onClick={() => toggleSort('action')}>Accion</th>
+                <th className="px-4 py-3 font-semibold cursor-pointer" onClick={() => toggleSort('outcome')}>Outcome</th>
+                <th className="px-4 py-3 font-semibold cursor-pointer" onClick={() => toggleSort('severity')}>Severidad</th>
                 <th className="px-4 py-3 font-semibold">Actor</th>
                 <th className="px-4 py-3 font-semibold">Recurso</th>
                 <th className="px-4 py-3 font-semibold">Detalles</th>
@@ -261,7 +287,28 @@ export default function AdminAuditsPage() {
             </tbody>
           </table>
         </div>
+        <div className="flex items-center justify-between gap-3 border-t p-3">
+          <div className="flex items-center gap-2">
+            <button className="btn mr-2" disabled={page <= 1} onClick={() => { setPage((p) => Math.max(1, p - 1)); fetchAudits(); }}>
+              Prev
+            </button>
+            <button className="btn" disabled={page >= totalPages} onClick={() => { setPage((p) => Math.min(totalPages, p + 1)); fetchAudits(); }}>
+              Next
+            </button>
+          </div>
+
+          <div className="flex items-center gap-2">
+            <label className="text-sm text-muted-foreground">Page size</label>
+            <select value={pageSize} onChange={(e) => { setPageSize(e.target.value); setPage(1); }} className="input-field w-28">
+              <option value="25">25</option>
+              <option value="50">50</option>
+              <option value="100">100</option>
+            </select>
+            <button className="btn-secondary" onClick={() => { setPage(1); fetchAudits(); }}>Apply</button>
+          </div>
+        </div>
       </section>
     </main>
   );
+
 }

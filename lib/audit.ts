@@ -10,6 +10,11 @@ export interface AuditFilters {
   severity?: AuditSeverity;
   from?: string;
   to?: string;
+  // Pagination and sorting
+  page?: number;
+  pageSize?: number;
+  sortBy?: string;
+  sortOrder?: 'asc' | 'desc';
 }
 
 export interface AuditLogInput {
@@ -117,6 +122,71 @@ export async function getRecentAudits(filters: AuditFilters = {}) {
   const query = `SELECT * FROM audits ${whereClause} ORDER BY created_at DESC LIMIT $${params.length}`;
   const res = await pool.query(query, params as any[]);
   return res.rows;
+}
+
+export async function getPaginatedAudits(filters: AuditFilters = {}) {
+  const pool = getDbPool();
+  if (!pool) return { rows: [], total: 0 };
+  await ensureAuditTable();
+
+  const page = Math.max(Number(filters.page || 1), 1);
+  const pageSize = Math.min(Math.max(Number(filters.pageSize || 100), 1), 500);
+  const offset = (page - 1) * pageSize;
+
+  const where: string[] = [];
+  const params: unknown[] = [];
+
+  if (filters.action) {
+    params.push(filters.action);
+    where.push(`action = $${params.length}`);
+  }
+
+  if (filters.outcome) {
+    params.push(filters.outcome);
+    where.push(`outcome = $${params.length}`);
+  }
+
+  if (filters.severity) {
+    params.push(filters.severity);
+    where.push(`severity = $${params.length}`);
+  }
+
+  if (filters.from) {
+    params.push(filters.from);
+    where.push(`created_at >= $${params.length}::timestamp`);
+  }
+
+  if (filters.to) {
+    params.push(filters.to);
+    where.push(`created_at <= $${params.length}::timestamp`);
+  }
+
+  const whereClause = where.length > 0 ? `WHERE ${where.join(' AND ')}` : '';
+
+  // Safe sort column whitelist to avoid SQL injection
+  const allowedSort: Record<string, string> = {
+    created_at: 'created_at',
+    action: 'action',
+    severity: 'severity',
+    outcome: 'outcome',
+  };
+
+  const sortBy = allowedSort[filters.sortBy || 'created_at'] || 'created_at';
+  const sortOrder = (filters.sortOrder === 'asc' ? 'ASC' : 'DESC');
+
+  // Count total
+  const countQuery = `SELECT COUNT(*)::int AS total FROM audits ${whereClause}`;
+  const countRes = await pool.query(countQuery, params as any[]);
+  const total = (countRes.rows[0]?.total as number) || 0;
+
+  // Add pagination params
+  params.push(pageSize);
+  params.push(offset);
+
+  const query = `SELECT * FROM audits ${whereClause} ORDER BY ${sortBy} ${sortOrder} LIMIT $${params.length - 1} OFFSET $${params.length}`;
+  const res = await pool.query(query, params as any[]);
+
+  return { rows: res.rows, total };
 }
 
 export async function getAuditSummary() {

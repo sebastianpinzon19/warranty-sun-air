@@ -1,12 +1,13 @@
 {
-  "/_global-error/page": "app/_global-error/page.js",
   "/_not-found/page": "app/_not-found/page.js",
   "/api/warranty/download/[id]/route": "app/api/warranty/download/[id]/route.js",
   "/api/warranty/lookup/route": "app/api/warranty/lookup/route.js",
+  "/admin/audits/page": "app/admin/audits/page.js",
   "/api/warranty/register/route": "app/api/warranty/register/route.js",
-  "/favicon.ico/route": "app/favicon.ico/route.js",
   "/lookup/page": "app/lookup/page.js",
+  "/favicon.ico/route": "app/favicon.ico/route.js",
   "/page": "app/page.js",
-  "/register/page": "app/register/page.js",
-  "/success/page": "app/success/page.js"
+  "/success/page": "app/success/page.js",
+  "/api/admin/audits/route": "app/api/admin/audits/route.js",
+  "/register/page": "app/register/page.js"
 }
