@@ -7,7 +7,7 @@ export default function Home() {
       <header className="sticky top-0 z-50 border-b bg-card/95 backdrop-blur supports-[backdrop-filter]:bg-card/80">
         <div className="container-custom flex items-center justify-between py-4">
           <Link href="/" className="flex items-center gap-3">
-            <Image src="/sunair-logo.png" alt="SunAir supply INC" width={180} height={56} priority className="h-12 w-auto object-contain" />
+            <Image src="/sunair-wordmark.webp" alt="SunAir supply INC" width={180} height={56} priority className="h-12 w-auto object-contain" />
             <div>
               <span className="block text-xl font-bold leading-none">SunAir supply INC</span>
               <span className="text-xs text-muted-foreground">Heating &amp; A/C Supply</span>
@@ -26,7 +26,7 @@ export default function Home() {
 
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <Image src="/images/hero-hvac.jpg" alt="HVAC system" fill priority className="object-cover" />
+          <Image src="/images/family-living-room.webp" alt="HVAC comfort in a modern home" fill priority className="object-cover" />
           <div className="absolute inset-0 bg-gradient-to-r from-background via-background/95 to-background/60" />
         </div>
 
@@ -133,7 +133,7 @@ export default function Home() {
           </div>
 
           <div className="relative aspect-[4/3] overflow-hidden rounded-2xl shadow-2xl">
-            <Image src="/images/happy-family.jpg" alt="Family enjoying comfortable home" fill className="object-cover" />
+            <Image src="/images/modern-home-comfort.webp" alt="Family enjoying comfortable home" fill className="object-cover" />
           </div>
         </div>
       </section>
@@ -166,7 +166,7 @@ export default function Home() {
       <section className="py-20">
         <div className="container-custom grid gap-12 lg:grid-cols-2 items-center">
           <div className="relative aspect-[4/3] overflow-hidden rounded-2xl shadow-2xl order-2 lg:order-1">
-            <Image src="/images/technician.jpg" alt="Professional HVAC technician" fill className="object-cover" />
+            <Image src="/images/hvac-technician-service.webp" alt="Professional HVAC technician" fill className="object-cover" />
           </div>
           <div className="order-1 lg:order-2">
             <h2 className="mb-6 text-3xl font-bold sm:text-4xl">Trusted by Professionals</h2>
@@ -188,7 +188,7 @@ export default function Home() {
 
       <section className="relative overflow-hidden py-20">
         <div className="absolute inset-0 z-0">
-          <Image src="/images/warranty-certificate.jpg" alt="Warranty certificate" fill className="object-cover" />
+          <Image src="/images/sunair-wood-sign.webp" alt="SunAir brand display" fill className="object-cover" />
           <div className="absolute inset-0 bg-primary/95" />
         </div>
         <div className="relative z-10 container-custom text-center text-primary-foreground">
@@ -211,7 +211,7 @@ export default function Home() {
         <div className="container-custom grid gap-8 md:grid-cols-4">
           <div>
             <Link href="/" className="mb-4 flex items-center gap-3">
-              <Image src="/sunair-logo.png" alt="SunAir supply INC" width={150} height={48} className="h-10 w-auto object-contain" />
+              <Image src="/sunair-wordmark.webp" alt="SunAir supply INC" width={150} height={48} className="h-10 w-auto object-contain" />
               <span className="text-lg font-bold">SunAir supply INC</span>
             </Link>
             <p className="text-sm text-muted-foreground">Professional HVAC warranty registration and management system.</p>

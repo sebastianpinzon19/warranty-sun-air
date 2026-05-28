@@ -88,7 +88,7 @@ export default function RegisterPage() {
       <header className="border-b bg-card/95 backdrop-blur">
         <div className="container-custom flex items-center justify-between py-4">
           <Link href="/" className="flex items-center gap-3">
-            <Image src="/sunair-logo.png" alt="SunAir supply INC" width={180} height={56} className="h-12 w-auto object-contain" />
+            <Image src="/sunair-wordmark.webp" alt="SunAir supply INC" width={180} height={56} className="h-12 w-auto object-contain" />
             <div>
               <span className="block text-xl font-bold leading-none">SunAir supply INC</span>
               <span className="text-xs text-muted-foreground">Warranty Registration</span>
