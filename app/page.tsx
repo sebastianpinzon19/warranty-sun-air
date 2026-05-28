@@ -7,7 +7,7 @@ export default function Home() {
       <header className="sticky top-0 z-50 border-b bg-card/95 backdrop-blur supports-[backdrop-filter]:bg-card/80">
         <div className="container-custom flex items-center justify-between py-4">
           <Link href="/" className="flex items-center gap-3">
-            <Image src="/sunair-wordmark.webp" alt="SunAir supply INC" width={180} height={56} priority className="h-12 w-auto object-contain" />
+            <Image src="/images/sunair-wordmark.webp" alt="SunAir supply INC" width={180} height={56} priority className="h-12 w-auto object-contain" />
             <div>
               <span className="block text-xl font-bold leading-none">SunAir supply INC</span>
               <span className="text-xs text-muted-foreground">Heating &amp; A/C Supply</span>
@@ -211,7 +211,7 @@ export default function Home() {
         <div className="container-custom grid gap-8 md:grid-cols-4">
           <div>
             <Link href="/" className="mb-4 flex items-center gap-3">
-              <Image src="/sunair-wordmark.webp" alt="SunAir supply INC" width={150} height={48} className="h-10 w-auto object-contain" />
+              <Image src="/images/sunair-wordmark.webp" alt="SunAir supply INC" width={150} height={48} className="h-10 w-auto object-contain" />
               <span className="text-lg font-bold">SunAir supply INC</span>
             </Link>
             <p className="text-sm text-muted-foreground">Professional HVAC warranty registration and management system.</p>
